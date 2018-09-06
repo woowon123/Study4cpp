@@ -11,11 +11,24 @@ public:
 	~dan() {};
 
 	void set(int s, int b) { start = s; end = b; }
-	void play(int dan)
+	void play()
 	{
-		for (int i = start; i < end + 1; ++i)
+		for (int i = 1; i < 10; ++i)
 		{
-			cout << dan * i << endl;
+			for (int j = 2; j < 6; ++j)
+			{
+				cout << j * i << "\t";
+			}
+			cout << endl;
+		}
+		cout << endl; cout << endl;
+		for (int i = 1; i < 10; ++i)
+		{
+			for (int j = 6; j < 10; ++j)
+			{
+				cout << j * i << "\t";
+			}
+			cout << endl;
 		}
 	}
 
@@ -24,8 +37,5 @@ public:
 void main()
 {
 	dan jin;
-	jin.play(5);
-	cout << "--------------" << endl;
-	jin.set(2, 5);
-	jin.play(3);
+	jin.play();
 }
