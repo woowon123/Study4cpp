@@ -1,0 +1,4 @@
+﻿  part1.cpp
+c:\users\진우원\desktop\project_jin_cpp\project_jin_cpp\part1.cpp(20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\진우원\desktop\project_jin_cpp\project_jin_cpp\part1.cpp(58): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Project_Jin_cpp.vcxproj -> C:\Users\진우원\Desktop\Project_Jin_cpp\Debug\Project_Jin_cpp.exe
