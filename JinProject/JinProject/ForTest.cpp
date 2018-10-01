@@ -2,56 +2,45 @@
 #include <string>
 #include <set>
 using namespace std;
-void searchNumer();
+void searchNumer(int a);
 
 
 int main()
 {
-	searchNumer();
+	int number;
+	cin >> number;
+	if (number <= 1000)
+		searchNumer(number);
+	else
+		cout << "1000 이하 숫자만 입력 가능합니다" << endl;
 }
 
-void searchNumer()
+void searchNumer(int a)
 {
-	set<int> s;
-	int number;
-	int number2 = 0;
-	for (int i = 1; i <= 10000; ++i)
+	int count = 0;
+
+
+	if (a < 100)
 	{
-		s.insert(i);
+		count = a;
 	}
 
-	for (int result = 1; result < 10000; ++result)
+	if (a > 100 && a<=1000)
 	{
-		if (result >= 1000 && result <= 10000)
+		int first;
+		int second;
+		int third;
+		count = 99;
+		for (int i = 100; i <= a; ++i)
 		{
-
-			number = result + (result / 1000) + ((result % 1000) / 100) + (((result % 1000) % 100) / 10) + (((result % 1000) % 100) % 10);
-				if (number <= 10000)
-					s.erase(number);
-		}
-		else if (result >= 100 && result <= 999)
-		{
-			number = result + ((result / 100)) + (((result / 10)) % 10) + ((result % 100) % 10);
-			if (number <= 10000)
-				s.erase(number);
-		}
-		else if (result >= 10 && result <= 99)
-		{
-			number = result + ((result / 10)) + (result % 10);
-			if (number <= 10000)
-				s.erase(number);
-		}
-		else
-		{
-			number = result + result;
-			if (number <= 10000)
-				s.erase(number);
+			first = i / 100;
+			second = (i % 100) / 10;
+			third = (i % 100) % 10;
+			if (first - second == second - third)
+			{
+				++count;
+			}
 		}
 	}
-	
-	
-	for (auto p = s.begin(); p != s.end(); ++p)
-	{
-		cout << *p << endl;
-	}
+	cout << count << endl;
 }
